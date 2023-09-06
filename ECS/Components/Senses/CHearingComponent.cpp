@@ -21,10 +21,10 @@ void CHearingComponent::Update( tgFloat DeltaTime, CEntity* Parent )
 	if( Parent->GetWorld()->GetEntity("Player") )
 	{
 		// tgCDebugManager& rDebug = tgCDebugManager::GetInstance();
-		tgCV3D PlayerPos		= Parent->GetWorld()->GetEntity( "Player" )->GetEntityPos();
-		tgCV3D OwnerPos			= Parent->GetEntityPos();
-		tgFloat Distance		= ( PlayerPos - OwnerPos ).Length();
-		tgCV3D HalfPoint		= ( PlayerPos + OwnerPos ) / 2;
+		tgCV3D PlayerPos 	= Parent->GetWorld()->GetEntity( "Player" )->GetEntityPos();
+		tgCV3D OwnerPos		= Parent->GetEntityPos();
+		tgFloat Distance 	= ( PlayerPos - OwnerPos ).Length();
+		tgCV3D HalfPoint	= ( PlayerPos + OwnerPos ) / 2;
 
 		/*tgCLine3D DistanceLine( OwnerPos, PlayerPos );
 
