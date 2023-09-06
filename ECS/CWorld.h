@@ -1,15 +1,15 @@
 #pragma once
 
 #include "tgSystem.h"
+#include "Navigation/CNavMesh.h"
+#include "Navigation/SNode.h"
+
 #include <tgMemoryDisable.h>
 #include <vector>
 #include <tgMemoryEnable.h>
 
-#include "Navigation/CNavMesh.h"
-#include "Navigation/SNode.h"
-
-class		CEntity;
-class		CNavMesh;
+class	CEntity;
+class	CNavMesh;
 
 typedef std::vector< SNode* > SNodeList;
 typedef std::vector< CEntity* > CEntityList;
@@ -24,15 +24,15 @@ public:
 
 	//////////////////////////////////////////////////////////////////////////
 
-	void		DrawDebug				( void );
-	void		Update					( tgFloat DeltaTime );
+	void		DrawDebug			( void );
+	void		Update				( tgFloat DeltaTime );
 	void		DestroyEntity			( tgCString Name );
 	CEntity*	CreateEntity			( tgCString Name );
-	CEntity*	GetEntity				( tgCString Name );
+	CEntity*	GetEntity			( tgCString Name );
 
 	//////////////////////////////////////////////////////////////////////////
 
-	SNodeList	GetNodeList				( void )	{ return m_pNavMesh->GetNodeList(); }
+	SNodeList	GetNodeList			( void )	{ return m_pNavMesh->GetNodeList(); }
 	tgFloat		GetMonsterIndexList		( void )	{ return m_MonsterIndex; }
 
 	//////////////////////////////////////////////////////////////////////////
