@@ -44,9 +44,9 @@ void CSmellComponent::Update( tgFloat DeltaTime, CEntity* Parent )
 
 		if( m_Cooldown <= 0 )
 		{
-			SSmell* Smell = new SSmell;
-			Smell->m_Pos = Parent->GetWorld()->GetEntity( "Player" )->GetEntityPos();
-			Smell->m_LifeTime = 0;
+			SSmell* Smell		= new SSmell;
+			Smell->m_Pos		= Parent->GetWorld()->GetEntity( "Player" )->GetEntityPos();
+			Smell->m_LifeTime 	= 0;
 			m_SmellList.push_back( Smell );
 			m_Cooldown = m_Timer;
 		}
