@@ -28,18 +28,18 @@ public:
 
 private:
 
-	tgCV3D							m_Mouse;
-	tgCV3D							m_MoveDirection;
-	tgCV3D							m_Gravity;
+	tgCV3D		m_Mouse;
+	tgCV3D		m_MoveDirection;
+	tgCV3D		m_Gravity;
 
-	tgFloat							m_MouseSensitivity;
-	tgFloat							m_MoveX;
-	tgFloat							m_MoveZ;
-	tgFloat							m_Sprint;
-	tgFloat							m_Sneak;
-	tgFloat							m_SpeedX;
-	tgFloat							m_SpeedZ;
+	tgFloat		m_MouseSensitivity;
+	tgFloat		m_MoveX;
+	tgFloat		m_MoveZ;
+	tgFloat		m_Sprint;
+	tgFloat		m_Sneak;
+	tgFloat		m_SpeedX;
+	tgFloat		m_SpeedZ;
 
-	tgSInt16						m_InvertX;
+	tgSInt16	m_InvertX;
 };
 
