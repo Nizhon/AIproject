@@ -33,8 +33,8 @@ public:
 
 	//////////////////////////////////////////////////////////////////////////
 
-	void	DrawDebug			( void );
-	void	Update				( tgFloat DeltaTime, CEntity* Parent ) override;
+	void	DrawDebug		( void );
+	void	Update			( tgFloat DeltaTime, CEntity* Parent ) override;
 
 	//////////////////////////////////////////////////////////////////////////
 
@@ -42,8 +42,8 @@ public:
 
 	//////////////////////////////////////////////////////////////////////////
 
-	void	Searching			( tgFloat DeltaTime, CEntity* Parent );
-	void	FollowSmell			( tgFloat DeltaTime, CEntity* Parent );
+	void	Searching		( tgFloat DeltaTime, CEntity* Parent );
+	void	FollowSmell		( tgFloat DeltaTime, CEntity* Parent );
 	void	AttackPlayer		( tgFloat DeltaTime, CEntity* Parent );
 
 	//////////////////////////////////////////////////////////////////////////
@@ -54,18 +54,18 @@ public:
 
 private:
 
-	EState			m_State;
+	EState		m_State;
 
-	tgFloat			m_SniffCooldown;
-	tgFloat			m_WalkIndex;
-	tgFloat			m_WaitTime;
-	tgFloat			m_Timer;
-	tgFloat			m_TimeBetweenPoints;
+	tgFloat		m_SniffCooldown;
+	tgFloat		m_WalkIndex;
+	tgFloat		m_WaitTime;
+	tgFloat		m_Timer;
+	tgFloat		m_TimeBetweenPoints;
 
-	tgBool			m_Searching;
-	tgBool			m_SmellDetected;
-	tgBool			m_InAttackRange;
+	tgBool		m_Searching;
+	tgBool		m_SmellDetected;
+	tgBool		m_InAttackRange;
 
-	WalkPath		m_WalkPath;
+	WalkPath	m_WalkPath;
 };
 
