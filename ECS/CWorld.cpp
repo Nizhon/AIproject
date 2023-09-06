@@ -21,8 +21,8 @@ CWorld::CWorld( void )
 , m_ScoreThreshold( 10 )
 {
 	CWorldManager& rWorldManager	= CWorldManager::GetInstance();
-	m_pCollisionWorld				= rWorldManager.LoadWorld( "worlds/CollisionForestFixedMaybe.tfw",	"Collision" );
-	m_pNavWorld						= rWorldManager.LoadWorld( "worlds/NavForest.tfw",		"Navigation" );
+	m_pCollisionWorld		= rWorldManager.LoadWorld( "worlds/CollisionForestFixedMaybe.tfw", "Collision" );
+	m_pNavWorld			= rWorldManager.LoadWorld( "worlds/NavForest.tfw", "Navigation" );
 	
 	rWorldManager.SetActiveWorld( m_pCollisionWorld );
 
@@ -78,6 +78,7 @@ void CWorld::DrawDebug()
 	{
 		tgCSphere EntitySphere;
 		EntitySphere.Set( m_EntityList[i]->GetEntityPos(), 0.3f );
+		
 		if( m_EntityList[i]->GetEntityName() == "Player" )
 			rDebug.AddLineSphere( EntitySphere, tgCColor::Lime );
 		else if( m_EntityList[i]->GetEntityName() == "Bullet" )
@@ -100,7 +101,7 @@ void CWorld::Update( tgFloat DeltaTime )
 	{
 		tgFloat Temp = m_MonsterIndex;
 		m_MonsterIndex += 0;
-
+		
 		for ( int i = Temp; i < m_MonsterIndex; i++ )
 		{
 			tgCString Monster = "Monster";
@@ -116,7 +117,6 @@ void CWorld::Update( tgFloat DeltaTime )
 		}
 		m_ScoreThreshold += 10;
 	}
-
 	for ( int i = 0; i < m_EntityList.size(); i++ )
 	{
 		m_EntityList[i]->Update( DeltaTime );
