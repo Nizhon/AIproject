@@ -36,8 +36,8 @@ void CPlayerControllerComponent::Update( tgFloat DeltaTime, CEntity* Parent )
 	{
 		tgCDebugManager& rDebug		= tgCDebugManager::GetInstance();
 		CApplication& rApplication	= CApplication::GetInstance();
-		CCamera* p3DCamera			= rApplication.Get3DCamera();
-		tgCMatrix& rCamera			= p3DCamera->GetCamera()->GetTransform().GetMatrixLocal();
+		CCamera* p3DCamera		= rApplication.Get3DCamera();
+		tgCMatrix& rCamera		= p3DCamera->GetCamera()->GetTransform().GetMatrixLocal();
 		tgCTransform* pPlayer		= Parent->GetEntityTransform();
 
 		pPlayer->GetMatrixLocal().Pos	= Parent->GetEntityPos();
@@ -45,14 +45,14 @@ void CPlayerControllerComponent::Update( tgFloat DeltaTime, CEntity* Parent )
 		rCamera.RotateX( m_Mouse.x, tgCMatrix::COMBINE_REPLACE );
 		rCamera.RotateY( m_Mouse.y, tgCMatrix::COMBINE_POST_MULTIPLY );
 
-		m_Mouse.x		= tgMathClamp( 90.0f, m_Mouse.x, 5.0f );
+		m_Mouse.x	= tgMathClamp( 90.0f, m_Mouse.x, 5.0f );
 
-		rCamera.Pos		= rCamera.Up * 0.75 + pPlayer->GetMatrixLocal().Pos - ( rCamera.At * 5 );
-		rCamera.Pos		= pPlayer->GetMatrixLocal().Pos;
+		rCamera.Pos	= rCamera.Up * 0.75 + pPlayer->GetMatrixLocal().Pos - ( rCamera.At * 5 );
+		rCamera.Pos	= pPlayer->GetMatrixLocal().Pos;
 		rCamera.Pos.y	= pPlayer->GetMatrixLocal().Pos.y + 0.8;
 
 		tgCV3D CameraAt = rCamera.At;
-		CameraAt.y		= 0;
+		CameraAt.y	= 0;
 
 		// Rotation for the droid
 		pPlayer->GetMatrixLocal().RotateY( m_Mouse.y, tgCMatrix::COMBINE_REPLACE );
@@ -85,9 +85,9 @@ void CPlayerControllerComponent::InputEvent( const tgInput::EType Type, const tg
 	if ( ( Type == tgInput::TYPE_KEY_DOWN) && (pEvent->Keyboard.Repeat == 0 ) )
 	{
 		if ( pEvent->Keyboard.VKey == 'A' ) { m_MoveX = 2.5f; }
-		if ( pEvent->Keyboard.VKey == 'D' ) {	m_MoveX = -2.5; }
-		if ( pEvent->Keyboard.VKey == 'W' ) {	m_MoveZ = 2.5f; }
-		if ( pEvent->Keyboard.VKey == 'S' ) {	m_MoveZ = -2.5f; }
+		if ( pEvent->Keyboard.VKey == 'D' ) { m_MoveX = -2.5; }
+		if ( pEvent->Keyboard.VKey == 'W' ) { m_MoveZ = 2.5f; }
+		if ( pEvent->Keyboard.VKey == 'S' ) { m_MoveZ = -2.5f; }
 		if ( pEvent->Keyboard.VKey == VK_SHIFT ) m_Sprint = 1.75f;
 		if ( pEvent->Keyboard.VKey == VK_CONTROL ) m_Sneak = 0.4f;
 	}
@@ -95,9 +95,9 @@ void CPlayerControllerComponent::InputEvent( const tgInput::EType Type, const tg
 	if ( Type == tgInput::TYPE_KEY_UP )
 	{
 		if ( pEvent->Keyboard.VKey == 'A' ) { m_MoveX = 0.0f; }
-		if ( pEvent->Keyboard.VKey == 'D' ) {	m_MoveX = 0.0f; }
-		if ( pEvent->Keyboard.VKey == 'W' ) {	m_MoveZ = 0.0f; }
-		if ( pEvent->Keyboard.VKey == 'S' ) {	m_MoveZ = 0.0f; }
+		if ( pEvent->Keyboard.VKey == 'D' ) { m_MoveX = 0.0f; }
+		if ( pEvent->Keyboard.VKey == 'W' ) { m_MoveZ = 0.0f; }
+		if ( pEvent->Keyboard.VKey == 'S' ) { m_MoveZ = 0.0f; }
 		if ( pEvent->Keyboard.VKey == VK_SHIFT ) m_Sprint = 1.0f;
 		if ( pEvent->Keyboard.VKey == VK_CONTROL ) m_Sneak = 1.0f;
 		if ( pEvent->Keyboard.VKey == MOUSEEVENTF_LEFTUP );
