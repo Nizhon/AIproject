@@ -1,5 +1,4 @@
 #include "CEntity.h"
-
 #include "CWorld.h"
 
 CEntity::CEntity( void )
@@ -26,3 +25,5 @@ void CEntity::Update( tgFloat DeltaTime)
 		m_ComponentList[i]->Update( DeltaTime, m_pParent );
 	}
 }
+
+
