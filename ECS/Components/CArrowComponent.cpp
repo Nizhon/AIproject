@@ -23,7 +23,7 @@ void CArrowComponent::Update(tgFloat DeltaTime, CEntity* Parent)
 	if( Parent->GetWorld()->GetEntity("Player") )
 	{
 		tgCTransform* pArrow		= Parent->GetComponent<CTransformComponent>()->GetTransfrom();
-		CEntity* pPlayer			= Parent->GetWorld()->GetEntity( "Player" );
+		CEntity* pPlayer		= Parent->GetWorld()->GetEntity( "Player" );
 		CHealthComponent* pHealth	= pPlayer->GetComponent<CHealthComponent>();
 
 		if( m_BulletAlive == true )
