@@ -5,12 +5,12 @@
 #include	<tgMemoryEnable.h>
 struct SNode
 {
-	bool		Checked;
-	int			F_Cost;
-	int			H_Cost;
-	int			G_Cost;
+	bool	Checked;
+	int	F_Cost;
+	int	H_Cost;
+	int	G_Cost;
 
-	SNode*		ParentNode;
+	SNode*	ParentNode;
 
 	std::vector< SNode* > Neighbour;
 
@@ -22,10 +22,10 @@ struct SNode
 	SNode( const SNode& ) = delete;
 #include <tgMemoryEnable.h>
 
-	SNode(tgCTriangle3D triangle)
-		: Triangle(triangle)
+	SNode( tgCTriangle3D triangle )
+		: Triangle( triangle )
 	{
-		MiddlePoint = (Triangle.GetVertex(0) + Triangle.GetVertex(1) + Triangle.GetVertex(2)) / 3;
+		MiddlePoint = ( Triangle.GetVertex( 0 ) + Triangle.GetVertex( 1 ) + Triangle.GetVertex( 2 ) ) / 3;
 	}
 };
 
