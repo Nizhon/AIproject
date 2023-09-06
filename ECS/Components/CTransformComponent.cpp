@@ -29,7 +29,7 @@ void CTransformComponent::Update( tgFloat DeltaTime, CEntity* Parent )
 		///
 		//////////////////////////////////////////////////////////////////////////
 
-		tgCTransform* pOwner			= Parent->GetEntityTransform();
+		tgCTransform* pOwner = Parent->GetEntityTransform();
 
 		tgCCollision CollisionManager( true );
 		CollisionManager.SetType( tgCMesh::EType::TYPE_WORLD );
@@ -50,7 +50,7 @@ void CTransformComponent::Update( tgFloat DeltaTime, CEntity* Parent )
 		}
 		else
 		{
-			pOwner->GetMatrixLocal().Pos	= Parent->GetEntityPos();
+			pOwner->GetMatrixLocal().Pos = Parent->GetEntityPos();
 			Parent->SetEntityPos(pOwner->GetMatrixWorld().Pos);
 		}
 
