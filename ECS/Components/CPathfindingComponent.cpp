@@ -23,8 +23,8 @@ Path* CPathfindingComponent::GetPath( SNode* Start, SNode* Goal )
 {
 	SNode* Current = Start;
 
-	Current->G_Cost = tgMathAbs(Start->MiddlePoint.x - Current->MiddlePoint.x) + tgMathAbs(Start->MiddlePoint.z - Current->MiddlePoint.z);
-	Current->H_Cost = tgMathAbs(Goal->MiddlePoint.x - Current->MiddlePoint.x) + tgMathAbs(Goal->MiddlePoint.z - Current->MiddlePoint.z);
+	Current->G_Cost = tgMathAbs( Start->MiddlePoint.x - Current->MiddlePoint.x ) + tgMathAbs( Start->MiddlePoint.z - Current->MiddlePoint.z );
+	Current->H_Cost = tgMathAbs( Goal->MiddlePoint.x - Current->MiddlePoint.x ) + tgMathAbs( Goal->MiddlePoint.z - Current->MiddlePoint.z );
 	Current->F_Cost = Current->G_Cost + Current->H_Cost;
 	Current->Checked = false;
 	Current->ParentNode = nullptr;
