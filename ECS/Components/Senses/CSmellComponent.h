@@ -19,24 +19,23 @@ public:
 
 	//////////////////////////////////////////////////////////////////////////
 
-	void	DrawDebug			( void );
-	void	Update				( tgFloat DeltaTime, CEntity* Parent ) override;
+	void	DrawDebug	( void );
+	void	Update		( tgFloat DeltaTime, CEntity* Parent ) override;
 
 	//////////////////////////////////////////////////////////////////////////
 
-	SmellList GetSmellList()	{ return m_SmellList; }
+	SmellList GetSmellList() { return m_SmellList; }
 
 	//////////////////////////////////////////////////////////////////////////
 
 private:
 
-	tgFloat						m_SmellIndex;
-	tgFloat						m_Timer;
-	tgFloat						m_Cooldown;
+	tgFloat		m_SmellIndex;
+	tgFloat		m_Timer;
+	tgFloat		m_Cooldown;
 
-	tgBool						m_SmellDetected;
+	tgBool		m_SmellDetected;
 
-	SmellList					m_SmellList;
-
+	SmellList	m_SmellList;
 };
 
