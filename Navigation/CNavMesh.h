@@ -2,13 +2,13 @@
 #include <tgSystem.h>
 
 #include "SNode.h"
+#include "ECS/CEntity.h"
 
 #include <tgMemoryDisable.h>
 #include <vector>
 #include <tgMemoryEnable.h>
 #include <tgCTriangle3D.h>
 #include <tgCWorld.h>
-#include "ECS/CEntity.h"
 
 typedef std::vector< SNode* > SNodeList;
 
@@ -27,17 +27,17 @@ public:
 
 private:
 
-	tgCWorld*						m_pWorldMap;
+	tgCWorld*			m_pWorldMap;
 
-	const tgCMesh::SVertex*			m_pVertex_array;
+	const tgCMesh::SVertex*		m_pVertex_array;
 
-	const tgUInt32*					m_pIndex_array;
+	const tgUInt32*			m_pIndex_array;
 
-	int								m_TriangleAmount;
+	int				m_TriangleAmount;
 
 	std::vector < tgCTriangle3D >	m_Triangles;
 
-	std::vector < SNode* >			m_Nodes;
+	std::vector < SNode* >		m_Nodes;
 
 };
 
