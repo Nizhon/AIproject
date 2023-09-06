@@ -4,6 +4,6 @@
 
 struct SSmell
 {
-		tgCV3D		m_Pos;
-		tgFloat		m_LifeTime;
+	tgCV3D	m_Pos;
+	tgFloat	m_LifeTime;
 };
